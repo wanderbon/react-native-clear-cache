@@ -5,12 +5,12 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(clearAppCache:(RCTResponseSenderBlock *)callback)
+RCT_EXPORT_METHOD(clearAppCache)
 {
-    [self clearFile:callback];
+    [self clearFile];
 }
 
-- (void)clearFile:(RCTResponseSenderBlock)callback
+- (void)clearFile
 {
     NSString * cachPath = [NSSearchPathForDirectoriesInDomains (NSCachesDirectory, NSUserDomainMask, YES ) firstObject];
     
@@ -25,9 +25,6 @@ RCT_EXPORT_METHOD(clearAppCache:(RCTResponseSenderBlock *)callback)
             [[ NSFileManager defaultManager ] removeItemAtPath :path error :&error];
         }
     }
-    
-    callback(@[[NSNull null]]);
-    
 }
 
 @end
