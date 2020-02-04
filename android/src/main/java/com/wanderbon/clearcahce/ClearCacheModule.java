@@ -20,7 +20,7 @@ public class ClearCacheModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RCTClearCacheModule";
+        return "ClearCache";
     }
 
     @ReactMethod
