@@ -1,15 +1,12 @@
 package com.wanderbon.clearcahce;
 
 import android.os.AsyncTask;
-import com.facebook.react.bridge.Callback;
 
 public class ClearCacheAsyncTask extends AsyncTask<Integer,Integer,String> {
     public ClearCacheModule myclearCacheModule = null;
-    public Callback callback;
-    public ClearCacheAsyncTask(ClearCacheModule clearCacheModule, Callback callback) {
+    public ClearCacheAsyncTask(ClearCacheModule clearCacheModule) {
         super();
         this.myclearCacheModule = clearCacheModule;
-        this.callback = callback;
     }
 
     @Override
@@ -20,8 +17,6 @@ public class ClearCacheAsyncTask extends AsyncTask<Integer,Integer,String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        callback.invoke();
-
     }
 
     @Override

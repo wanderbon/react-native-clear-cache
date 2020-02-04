@@ -2,7 +2,6 @@ package com.wanderbon.clearcahce;
 
 import android.content.Context;
 
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -24,8 +23,8 @@ public class ClearCacheModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void clearAppCache(Callback callback) {
-        ClearCacheAsyncTask asyncTask = new ClearCacheAsyncTask(myclearCacheModule, callback);
+    public void clearAppCache() {
+        ClearCacheAsyncTask asyncTask = new ClearCacheAsyncTask(myclearCacheModule);
         asyncTask.execute(10);
     }
 
